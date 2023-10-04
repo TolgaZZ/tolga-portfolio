@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Neue Montreal", serif;
+  background: #0e0e0e;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Neue Montreal", serif;
+  background: #0e0e0e;
+}
+
+.logo {
+  z-index: 1000;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 4em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 90%;
+}
+
+.navbar>* {
+  position: fixed;
+}
+
+.header__nav {
+  background-color: #c6e421;
+  position: fixed;
+  overflow: hidden;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  visibility: hidden;
+  clip-path: circle(var(--radius) at calc(100% - 55px) 47px);
+  font-family: "Roslindale Display Condensed";
+  font-size: 1em;
+}
+
+.header__nav[data-active="true"] {
+  visibility: visible;
+  color: white;
+}
+
+.header__menu {
+  padding: 2em 0;
+  list-style-type: none;
+  margin: 0;
+  width: 100%;
+}
+
+.header__menu>.header__menu-item {
+  font-size: 12vh;
+}
+
+.header__menu>.header__menu-item:not(:last-of-type) {
+  margin-bottom: 0em;
+}
+
+.header__menu-item a {
+  letter-spacing: -4px;
+  font-weight: 300 !important;
+  color: #000;
+  text-decoration: none;
+}
+
+#showreel {
+  position: absolute;
+  text-decoration: none;
+  color: #fff;
+  bottom: 0;
+  right: 0;
+  padding: 2em 1em;
+  font-size: 16px;
+}
+
+.slider {
+  width: 100%;
+  cursor: grab;
+}
+
+.slider-wrapper {
+  white-space: nowrap;
+}
+
+.slider-item {
+  display: inline-block;
+  width: 40vw;
+  padding: 3vw;
+}
+
+.slider-item figure {
+  position: relative;
+  padding-bottom: 50%;
+  overflow: hidden;
+}
+
+.slider-item figure img {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 20vw;
+  height: 2px;
+  margin: 2em;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.slider-progress-bar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  transform: scaleX(0);
+  transform-origin: 0% 0%;
+}
+
+.header__button {
+  z-index: 2;
+  width: 60px;
+  height: 50px;
+  border-radius: 30%;
+  background-color: #c6e421;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  margin: 20px;
+  outline: none;
+  animation-duration: 300ms;
+  animation-timing-function: ease;
+}
+
+.header__button[data-open="true"] {
+  background-color: #000;
+  animation-name: scale;
+  color: white;
+}
+
+.header__button[data-open="false"] {
+  transition: background-color 250ms linear;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
+
+.website-content {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roslindale Display Condensed";
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: -0.4vw;
+}
+
+.header-row {
+  position: relative;
+  line-height: 75%;
+  top: 150px;
+  transition: 1s;
+}
+
+.header-row-wrapper {
+  content: "";
+  position: absolute;
+  top: 275px;
+  left: -20px;
+  width: 110%;
+  height: 150px;
+  background: #e5e3dc;
+  margin: 0 auto;
+}
+
+.row:nth-child(1) {
+  width: 80%;
+  right: 0;
+}
+
+.row:nth-child(2) {
+  position: absolute;
+  width: 90%;
+  right: 0;
+}
+
+.row span {
+  text-transform: lowercase;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 4vw;
+  padding: 0 2em 0 1em;
+}
+
+.row:nth-child(2) span {
+  font-size: 9vw;
+}
+
+.footer {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  font-size: 1.8em;
+  padding: 2em 6em;
+}
+
+.pre-loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  color: #e5e3dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.pre-loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pre-loader-container .header {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.concat {
+  display: flex;
+}
+
+.header h1 {
+  position: relative;
+  top: 125px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Roslindale Display Condensed";
+  font-weight: 500;
+  font-size: 7vw;
+  line-height: 90%;
+  color: #0a0a0a;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+}
+
+.header h1::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #e5e3dc;
+  overflow: hidden;
+  width: 0%;
+  transition: 1s;
+  animation: fill 2s cubic-bezier(0.6, 0, 0.4, 1) forwards;
+  animation-delay: 2s;
+}
