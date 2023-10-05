@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow: hidden;
+    font-family: "Neue Montreal", serif;
+    background: #0e0e0e;
+  }
+  
+  .logo {
+    z-index: 1000;
+    color: white;
+  }
+  
+
+  .about-me{
+    position: relative;
+    width: 70vw;
+    height: 70vh;
+    margin: 0 auto;
+    color: white;
+   
+  }
+
+  h1{
+    text-transform: uppercase;
+    /* text-align: center; */
+    font-family: "Roslindale Display Condensed";
+    font-weight: 500;
+    font-size: 5vw;
+    line-height: 60%;
+  }
+
+  p{
+    font-size: 1.5vw;
+    margin: 1em 0 0 0;
+  }

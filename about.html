@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tolga🔥</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="about.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Tolga<br />Zorlu</div>
+        <button class="header__button nav-btn-js" type="button">Menu</button>`
+    </div>
+    <nav class="header__nav nav-js" data-active="false">
+        <ul class="header__menu">
+            <li class="header__menu-item"><a href="work.html">Work</a></li>
+            <li class="header__menu-item"><a href="about.html">About</a></li>
+            <li class="header__menu-item"><a href="mailto:contact@tolgazorlu.nl?subject=get in touch">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="about-me">
+        <H1>About me </H1>
+        <p>I'm Tolga, a 21-year-old software developer currently pursuing my bachelor's degree to enhance my skills in crafting exceptional user interfaces and delivering top-notch user experiences. I have experience in multiple programming languages designing softwares, and I'm thriving daily to become a better designer and developer by the day.  </p>
+        <p>I previously completed an MBO-4 program at Grafish Lyceum Rotterdam, where I earned my software developer degree. However, I felt that entering the workforce immediately was premature for my career goals. As a result, I decided to pursue my bachelor's degree at HVA to gain further experience and expertise.</p>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const revealerNav = window.revealer({
+            revealElementSelector: ".nav-js",
+            options: {
+                anchorSelector: ".nav-btn-js",
+            },
+        });
+
+        const actionBtn = document.querySelector(".nav-btn-js");
+        actionBtn.addEventListener("click", () => {
+            if (!revealerNav.isRevealed()) {
+                revealerNav.reveal();
+                actionBtn.setAttribute("data-open", true);
+            } else {
+                revealerNav.hide();
+                actionBtn.setAttribute("data-open", false);
+            }
+        });
+    });
+
+</script>
+
+</html>
